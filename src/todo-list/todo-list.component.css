@@ -1,7 +1,3 @@
 .line-over-text {
   text-decoration: line-through;
 }
-
-.todo-element {
-  display: inline-block;
-}
