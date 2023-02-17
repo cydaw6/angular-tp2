@@ -1,6 +1,3 @@
-<div>
-  <p *ngIf="remainingTasks(); let left">{{ left }} tasks remaining</p>
-</div>
 <ul>
   <li *ngFor="let todo of todos; index as i">
     <div>
@@ -9,9 +6,9 @@
         [state]="todo.done"
         [index]="i"
         (newTodoItemEvent)="updateTodoState($event)"
+        (updateLabelEvent)="updateTodoLabel($event)"
       ></todo-item>
     </div>
-   
   </li>
 </ul>
 <div>

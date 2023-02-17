@@ -21,13 +21,15 @@ export class TodoListComponent implements OnInit {
   updateTodoState(i: number): void {
     this.todos[i].done = !this.todos[i].done;
   }
+
+  updateTodoLabel(obj: any): void {
+    this.todos[obj.index].label = obj.label;
+  }
+
   addTodo() {
     if (!this.tmpInput) return;
     this.todos[this.todos.length] = { label: this.tmpInput, done: false };
     this.tmpInput = '';
-  }
-  remainingTasks(): number {
-    return this.todos.filter((t) => t.done == false).length;
   }
 
   ngOnInit() {}
