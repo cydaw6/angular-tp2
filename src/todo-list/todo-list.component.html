@@ -3,13 +3,21 @@
 </div>
 <ul>
   <li *ngFor="let todo of todos; index as i">
-    <div
+    <div>
+      <todo-item
+        [label]="todo.label"
+        [state]="todo.done"
+        [index]="i"
+        (newTodoItemEvent)="updateTodoState($event)"
+      ></todo-item>
+    </div>
+    <!-- <div
       [ngClass]="{ 'todo-done': todo.done == true }"
       (click)="updateTodoState(i)"
       class="bop todo-element"
     >
       {{ todo.label }}
-    </div>
+    </div> -->
   </li>
 </ul>
 <div>
