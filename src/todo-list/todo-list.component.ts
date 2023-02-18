@@ -14,7 +14,7 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
 })
 export class TodoListComponent implements OnInit {
   public todos: Todo[];
-  public tmpInput: string;
+  public textInput: string;
   constructor() {
     this.todos = [{ label: 'Test', done: false }];
   }
@@ -29,10 +29,10 @@ export class TodoListComponent implements OnInit {
   }
 
   addTodo() {
-    if (!this.tmpInput) return;
-    this.todos[this.todos.length] = { label: this.tmpInput, done: false };
-    M.toast({ html: "La tâche '" + this.tmpInput + "' à été ajouté" });
-    this.tmpInput = '';
+    if (!this.textInput) return;
+    this.todos[this.todos.length] = { label: this.textInput, done: false };
+    M.toast({ html: "La tâche '" + this.textInput + "' à été ajouté" });
+    this.textInput = '';
   }
 
   ngOnInit() {}
